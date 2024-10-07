@@ -1,8 +1,13 @@
 // (rafce) <--- command reactArrowFunctionExportComponents
 import React from 'react'
 import AxiosProductlist from "./components/AxiosProductsList"
+import ProductDetail from './components/ProductDetail'
+import { useState } from'react'
 
 const App = () => {
+  
+  const [id, setId] = useState(null)
+  
   // const products = ["Xbox One", "PS5", "Nintendo Switch"]
   return (
     <div>
@@ -13,7 +18,8 @@ const App = () => {
 
       {/* If we change the name of the products parameters to something else, like product, it will not work and display the default values */}
 
-      <AxiosProductlist />
+      <AxiosProductlist setId={setId} />
+      <ProductDetail id={id}/>
     </div>
   )
 }
